@@ -12,7 +12,7 @@ pipeline{
             }
             steps{
                 script {
-                    withSonarQubeEnv(credentialsId: 'Sonar_Qube') {
+                     withSonarQubeEnv(credentialsId: 'Sonar_token') {
                         sh 'chmod +x gradlew'
                         sh './gradlew sonarqube'
                     }
@@ -22,7 +22,7 @@ pipeline{
                       if (qg.status != 'OK') {
                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
                       }
-                    }*/
+                    }
                 }
             }
         }
@@ -37,10 +37,10 @@ pipeline{
                       docker rmi  34.125.18.109:8083/springapp:${VERSION}
                     '''
     
-                }
+                } */
                    
-                }
-            }
+                } 
+            } 
         }
     }
  }
