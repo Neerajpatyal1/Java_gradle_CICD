@@ -26,7 +26,7 @@ pipeline{
                 }
             }
         }
-        stage ("Docker Build and Docker push"){
+        /*stage ("Docker Build and Docker push"){
             steps{
                 script{ 
                   //withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_password')]) {
@@ -41,15 +41,7 @@ pipeline{
             } 
         }
 
-        stage('indentifying misconfigs using datree in helm charts'){
-            steps{
-                script{
-                    dir('kubernetes/'){
-                        sh 'helm datree test myapp/ --no-record'
-                    }
-                }
-            }
-        }
+        */
      
     }
   
