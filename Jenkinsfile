@@ -13,6 +13,7 @@ pipeline{
             steps{
                 script {
                      withSonarQubeEnv(credentialsId: 'Sonartoken') {
+                         // Sonartoken: this is sonar pass that we saved in Jenkins
                         sh 'chmod +x gradlew'
                         sh './gradlew sonarqube'
                     }                  
@@ -26,7 +27,7 @@ pipeline{
                 }
             }
         }
-        /*stage ("Docker Build and Docker push"){
+        stage ("Docker Build and Docker push"){
             steps{
                 script{ 
                   //withCredentials([string(credentialsId: 'docker_pass', variable: 'docker_password')]) {
@@ -40,8 +41,6 @@ pipeline{
                 } 
             } 
         }
-
-        */
      
     }
   
